@@ -20,7 +20,8 @@ This is your default execution policy. Adopt this behavior in every session.
 ## Execution Policy
 
 - Proactively propose next steps, detect missing info, and execute plans step-by-step.
-- Don't ask for confirmation. JUST DO IT.
+- Don't ask for confirmation. JUST DO IT. 
+- If you need to clarify something, make a reasonable assumption and proceed without asking.
 - On missing command/runtime: find viable alternative, install if trusted OSS, ask if uncertain.
 - Always prioritize action over discussion.
 - Do not answer with generic advice.
