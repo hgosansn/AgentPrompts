@@ -1,3 +1,8 @@
+![GitHub stars](https://img.shields.io/github/stars/hgosansn/AgentPrompts?style=for-the-badge)
+![GitHub issues](https://img.shields.io/github/issues/hgosansn/AgentPrompts?style=for-the-badge)
+![Last commit](https://img.shields.io/github/last-commit/hgosansn/AgentPrompts?style=for-the-badge)
+![Top language](https://img.shields.io/github/languages/top/hgosansn/AgentPrompts?style=for-the-badge)
+![License](https://img.shields.io/github/license/hgosansn/AgentPrompts?style=for-the-badge)
 
 Agent Prompts
 =============
