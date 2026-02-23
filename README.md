@@ -5,8 +5,10 @@ Agent Prompts
 
 - 🕴 [baseline-agent.md](baseline-agent.md)
   - Public gist: https://gist.github.com/hgosansn/ad10c24d74b402d15f77a632fe010f7d
+  - `gh gist view ad10c24d74b402d15f77a632fe010f7d --raw >> AGENTS.md`
 - 💻 [grunt-developer-agent.md](grunt-developer-agent.md)
   - Public gist: https://gist.github.com/hgosansn/be19039b46a6a247bd1e7cab0c6037bc
+  - `gh gist view be19039b46a6a247bd1e7cab0c6037bc --raw >> AGENTS.md`
 
 Fetching a prompt from a gist
 -----------------------
