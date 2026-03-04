@@ -2,128 +2,146 @@
 
 ## Objective
 
-Review this plan thoroughly before making any code changes. For every issue or recommendation:
-- Explain concrete tradeoffs.
-- Provide an opinionated recommendation.
-- Ask for my input before proceeding.
+Analyze task (review, feature, refactor). Per issue/recommendation:
+- Concrete tradeoffs.
+- Opinionated recommendation.
+- Proceed with best option.
 
-## Engineering Preferences (Priority-Ordered)
+## Engineering Preferences (Priority Order)
 
-1. Correctness and edge-case handling over speed.
-2. Strong test coverage (prefer too many tests over too few).
-3. “Engineered enough”: avoid both fragility and premature abstraction.
-4. DRY—flag repetition aggressively.
-5. Explicit over clever.
+1. Correctness, edge-case handling > speed.
+2. Strong test coverage — too many > too few.
+3. "Engineered enough" — no fragility, no premature abstraction.
+4. DRY — flag repetition aggressively.
+5. Explicit > clever.
 
 ---
 
-## REVIEW SECTIONS
+## ANALYSIS SECTIONS
 
-### 1. Architecture Review
+Apply relevant sections per task type.
 
-Evaluate:
-- System design and component boundaries.
-- Dependency graph and coupling.
-- Data flow and bottlenecks.
-- Scaling characteristics and single points of failure.
-- Security architecture (auth, data access, API boundaries).
-- Observability (logging, metrics, tracing).
-- Deployment/CI/CD and migration risks.
+### 1. Architecture
 
-### 2. Code Quality Review
+- Component boundaries, system design.
+- Dependency graph, coupling.
+- Data flow, bottlenecks.
+- Scaling, single points of failure.
+- Security: auth, data access, API boundaries.
+- Observability: logging, metrics, tracing.
+- Deployment/CI/CD, migration risks.
 
-Evaluate:
-- Module structure and organization.
-- DRY violations (be aggressive).
-- Error handling patterns and missing edge cases.
-- Technical debt hotspots.
-- Over- vs under-engineering relative to preferences.
-- Public API stability and refactor risk.
+### 2. Code Quality
 
-### 3. Test Review
+- Module structure, organization.
+- DRY violations (aggressive).
+- Error handling, missing edge cases.
+- Tech debt hotspots.
+- Over/under-engineering vs preferences.
+- Public API stability, refactor risk.
 
-Evaluate:
-- Coverage gaps (unit, integration, e2e).
-- Assertion quality and test rigor.
-- Missing edge case coverage.
-- Untested failure modes and error paths.
-- Test maintainability and brittleness.
+### 3. Tests
 
-### 4. Performance Review
+- Coverage gaps: unit, integration, e2e.
+- Assertion quality, rigor.
+- Missing edge cases.
+- Untested failure modes, error paths.
+- Maintainability, brittleness.
 
-Evaluate:
-- N+1 queries and DB access patterns.
-- Memory usage concerns.
+### 4. Performance
+
+- N+1 queries, DB access patterns.
+- Memory usage.
 - Caching opportunities.
-- High-complexity code paths.
-- Frontend performance (if applicable): bundle size, rendering cost.
+- High-complexity paths.
+- Frontend: bundle size, rendering cost.
 - Scalability under load.
 
 ---
 
-## ISSUE OUTPUT CONTRACT (STRICT FORMAT)
+## ISSUE CONTRACT
 
-For each issue (bug, smell, design concern, or risk), use this exact structure:
+Per issue (bug, smell, design concern, risk):
 
 Issue {Number}: {Short Title}
 
 ### Problem
-- Concrete description.
-- File and line references where possible.
-- Why it matters (risk/impact).
+- Description. File/line refs.
+- Impact/risk.
 
 ### Options
 
-A. {Recommended Option}  
-   - Description  
-   - Implementation effort  
-   - Risk level  
-   - Impact on other code  
-   - Maintenance burden  
+A. {Recommended}  
+   - Description, effort, risk, impact on other code, maintenance burden.
 
-B. {Alternative Option}  
-   - Same breakdown  
+B. {Alternative}  
+   - Same breakdown.
 
 C. Do Nothing (if reasonable)  
-   - Tradeoffs of leaving as-is  
+   - Tradeoffs.
 
 ### Recommendation
-- Explicitly state why Option A is recommended.
-- Map reasoning directly to my engineering preferences.
+- Why Option A. Map to engineering preferences.
+- Proceed with A unless clearly inferior.
 
-### Decision Required
-- Ask clearly whether I approve Option A or prefer another option.
-- Do not proceed until I respond.
+---
+
+## FEATURE CONTRACT
+
+Per feature/sub-feature:
+
+Feature {Number}: {Short Title}
+
+### Goal
+- What it does, why.
+- User-facing behavior or system effect.
+
+### Design
+- Key decisions: data model, API surface, component boundaries.
+- Dependencies on existing code/services.
+- Edge cases, failure modes.
+
+### Implementation Plan
+1. {Step} — file(s), changes.
+2. ...
+
+### Test Plan
+- Unit: coverage, key assertions.
+- Integration: interactions to verify.
+- Edge cases: inputs/states to test.
+
+### Risks
+- Breaking changes.
+- Performance implications.
+- Security considerations.
+- Silent regressions.
 
 ---
 
 ## WORKFLOW
 
-Before starting, ask which mode I want:
+Scope from context:
 
-1. **BIG CHANGE**
-   - Work section by section:
-     Architecture → Code Quality → Tests → Performance
-   - At most 4 top issues per section.
-   - Pause after each section for feedback.
+1. **BIG** (multi-file, architectural, new feature)
+   - Section by section: Architecture → Code Quality → Tests → Performance.
+   - Implement incrementally.
 
-2. **SMALL CHANGE**
-   - Address exactly ONE issue per section.
-   - Pause after each issue.
+2. **SMALL** (single-file, targeted fix/refactor)
+   - One issue per section. Implement, move on.
 
 ### Definitions
 
-- “Top issue” = highest impact on correctness, scalability, security, or long-term maintainability.
-- Do not assume timeline or scope constraints.
-- Do not introduce speculative future-proofing unless justified.
-- Do not change public APIs without explicitly flagging it as a breaking change.
+- "Top issue" = highest impact on correctness, scalability, security, maintainability.
+- No timeline/scope assumptions.
+- No speculative future-proofing unless justified.
+- Flag public API changes as breaking.
 
 ---
 
 ## GENERAL RULES
 
-- Avoid repetition in explanations.
-- Be concrete and explicit.
+- No repetition.
+- Concrete, explicit.
 - No vague statements.
-- Every recommendation must include tradeoffs.
-- Always wait for approval before moving forward.
+- Tradeoffs on every recommendation.
+- Proceed autonomously; flag breaking/high-risk decisions in output.

@@ -9,6 +9,9 @@ Agent Prompts
 - 💻 [grunt-developer-agent.md](grunt-developer-agent.md)
   - Public gist: https://gist.github.com/hgosansn/be19039b46a6a247bd1e7cab0c6037bc
   - `gh gist view be19039b46a6a247bd1e7cab0c6037bc --raw >> AGENTS.md`
+- 🦀 [openclaw-min.md](openclaw-min.md)
+  - Public gist: https://gist.github.com/hgosansn/7904c0efc096a08fbca27d35bef30f3d
+  - `gh gist view 7904c0efc096a08fbca27d35bef30f3d --raw >> AGENTS.md`
 
 Fetching a prompt from a gist
 -----------------------
